@@ -28,12 +28,23 @@ def build_introduction_messages(project_name, project_description):
 
     Structure your response using:
 
-    ## Understanding the Problem
+    ## Your Problem Statement: Understanding the Problem
 
     Start with:
     "Let's understand the problem you will be solving."
+    Explain:
+    - What the real-world issue is?
+    - Why it matters?
+    - Why organizations or stakeholders care about it?
+    Use bold case for subheadings followed by a colon to separate the content.
 
-    ## What You Are Trying to Achieve
+    ## Your Objective: What You Are Trying to Achieve?
+
+    Clearly explain:
+    - What the student’s objective is in this project.
+    - What they will build, analyze, or investigate.
+    - Reinforce the difference between the problem and the approach used to solve it.
+    Use bold case for subheadings followed by a colon to separate the content.
 
     Keep it simple, structured, and slightly conversational.
     """
