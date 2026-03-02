@@ -1,0 +1,11 @@
+from src.prompts.story import SYSTEM_PROMPT, build_user_prompt
+from src.llm_client import generate_response
+
+
+def story_generator(problem_description: str) -> str:
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": build_user_prompt(problem_description)}
+    ]
+
+    return generate_response(messages)
