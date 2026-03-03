@@ -30,13 +30,12 @@ def build_system_prompt(problem_context, question):
       - Conversational
       - Calm
 
-      Output format:
+      Output format: Output strictly in JSON
 
-      Feedback:
-      <2–3 short sentences>
-
-      Refined Version:
-      <1–2 simple sentences>
+      {
+        "Feedback": "<write your feedback here>",
+        "Refined Version": "..."
+      }
       """
 
 def build_user_prompt(answer): 
