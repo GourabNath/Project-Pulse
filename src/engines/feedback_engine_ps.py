@@ -4,7 +4,7 @@ from src.llm_client import generate_response
 def feedback_generator_ps(problem_context, question, answer) -> str:
 
   messages = [
-      {"role": "system", "content": build_system_prompt(problem_context, question)t},
+      {"role": "system", "content": build_system_prompt(problem_context, question)},
       {"role": "user", "content": build_user_prompt(answer)}
   ]
 
