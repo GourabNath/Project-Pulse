@@ -12,7 +12,7 @@ def feedback_generator_ps(problem_context, question, answer) -> str:
   '''
 
   messages = [
-      {"role": "system", "content": build_system_prompt(problem_context, question)},
+      {"role": "system", "content": build_system_prompt(problem_context, question) + "\n" + output_format},
       {"role": "user", "content": build_user_prompt(answer)}
   ]
 
