@@ -3,16 +3,8 @@ from src.llm_client import generate_response
 
 def feedback_generator_ps(problem_context, question, answer) -> str:
 
-  output_format = '''
-  Output strictly in json format:
-  {
-  "Feedback": <write your feedback here>,
-  "Refined Version": ...
-  }
-  '''
-
   messages = [
-      {"role": "system", "content": build_system_prompt(problem_context, question) + "\n" + output_format},
+      {"role": "system", "content": build_system_prompt(problem_context, question)t},
       {"role": "user", "content": build_user_prompt(answer)}
   ]
 
