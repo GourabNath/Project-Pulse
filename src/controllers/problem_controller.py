@@ -1,10 +1,9 @@
 
-CONTROLLER_VERSION = "0.0.0"
+CONTROLLER_VERSION = "0.0.1"
 
 def define_problem_statement(problem_description):
   #Generate Story
   from src.engines.story_engine import story_generator
-  problem_description = "A mid-sized company experiences 18% unexpected employee attrition annually"
   story_ = story_generator(problem_description)
   display(Markdown(story_))
   print("\n\n")
