@@ -1,5 +1,5 @@
 
-CONTROLLER_VERSION = "0.0.1"
+CONTROLLER_VERSION = "0.1.0"
 
 def define_problem_statement(problem_description):
   #Generate Story
@@ -12,6 +12,7 @@ def define_problem_statement(problem_description):
   from src.engines.reflection_questions_engine import reflection_questions_generate
   questions_ = reflection_questions_generate(story_)
 
+  #This section asks several questions to the user - makes them think - and then refine their thoughts
   import json
   qa_pairs = {}
   for i in range(5):
@@ -29,4 +30,10 @@ def define_problem_statement(problem_description):
     display(Markdown(feedback_json["Refined_Version"]))
     print("\n")
 
-  return({"story": story_, "qa_pairs": qa_pairs})
+  #The final step - the problem statement
+  print("\n")
+  print("Final Problem Statement")
+  print("\n")
+  problem_statement_ = input("Based on the above discussions can you give an attempt to frame the problem statement?")
+
+  return({"story": story_, "qa_pairs": qa_pairs, "problem_statement": problem_statement_})
