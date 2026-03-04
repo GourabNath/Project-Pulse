@@ -2,6 +2,7 @@
 CONTROLLER_VERSION = "0.1.0"
 
 def define_problem_statement(problem_description):
+  from IPython.display import Markdown, display
   #Generate Story
   from src.engines.story_engine import story_generator
   story_ = story_generator(problem_description)
