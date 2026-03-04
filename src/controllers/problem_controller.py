@@ -1,3 +1,6 @@
+
+CONTROLLER_VERSION = "0.0.0"
+
 def define_problem_statement(problem_description):
   #Generate Story
   from src.engines.story_engine import story_generator
