@@ -29,13 +29,12 @@ system_prompt = f"""
       - Preserve the student’s voice.
       - Do not overcomplicate it.
 
-      Output format:
-
-      Evaluation:
-      <3–5 short sentences assessing completeness>
-
-      Refined Version:
-      <Only lightly improved version if needed. If already excellent, keep changes minimal.>
+      Output format: Output **strictly in JSON** using this format
+      {{
+       Evaluation: <3–5 short sentences assessing completeness>,
+       Refined Version: <Only lightly improved version if needed. If already excellent, keep changes minimal.>
+      }}
+      
       """
 
 def build_user_prompt(problem_statement, qa_discussion, story):
