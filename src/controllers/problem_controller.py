@@ -15,6 +15,7 @@ def define_problem_statement(problem_description):
   #This section asks several questions to the user - makes them think - and then refine their thoughts
   import json
   qa_pairs = {}
+  qa_pairs_refined = {}
   for i in range(5):
     question = questions_.split("\n")[i].strip()
     print(question)
@@ -25,6 +26,7 @@ def define_problem_statement(problem_description):
     feedback_json = json.loads(feedback_)
 
     qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_json["Feedback"], "refined_answer": feedback_json["Refined_Version"]}
+    qa_pairs_refined[i] = {"question": question, "refined_answer": feedback_json["Refined_Version"]}
 
     display(Markdown(feedback_json["Feedback"]))
     display(Markdown(feedback_json["Refined_Version"]))
@@ -34,6 +36,13 @@ def define_problem_statement(problem_description):
   print("\n")
   print("Final Problem Statement")
   print("\n")
-  problem_statement_ = input("Based on the above discussions can you give an attempt to frame the problem statement?")
+  problem_statement_ = input("Based on the above discussions can you give an attempt to frame the problem statement?\n")
+  print("\n")
+
+  from src.engines.evaluator_engine_ps import problem_statement_evaluator
+  evaluation_ = problem_statement_evaluator(problem_statement_, qa_pairs_refined, story_)
+  evaluation_json = json.loads(evaluation_)
+  display(Markdown(evaluation_json["Evaluation"]))
+  display(Markdown(evaluation_json["Refined Version"]))
 
   return({"story": story_, "qa_pairs": qa_pairs, "problem_statement": problem_statement_})
