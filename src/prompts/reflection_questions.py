@@ -25,6 +25,7 @@ system_prompt = """
     - Be one short sentence
     - Feel like a gentle nudge
     - Invite reflection (e.g., "What might happen if...?", "Who could be affected by...?", "Why would this matter over time?")
+    - Maintain a tone like: what do you think would happen...?, Can you think of ...?, etc.
 
     Return only the numbered questions.
     """
