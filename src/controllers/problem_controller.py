@@ -23,6 +23,7 @@ def define_problem_statement(problem_description):
     answer = input("Enter your answer: ")
     print("\n")
 
+    from src.engines.feedback_engine_ps import feedback_generator_ps
     feedback_ = feedback_generator_ps(story_, question, answer)
     feedback_json = json.loads(feedback_)
 
