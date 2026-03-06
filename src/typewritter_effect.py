@@ -1,9 +1,6 @@
 
 import time
 from IPython.display import display, Markdown, clear_output
-
-
-import time
 import sys
 
 def typewriter(text, delay=0.03):
