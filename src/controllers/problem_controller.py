@@ -3,10 +3,11 @@ CONTROLLER_VERSION = "0.1.0"
 
 def define_problem_statement(problem_description):
   from IPython.display import Markdown, display
+  from src.typewritter_effect import stream_markdown
   #Generate Story
   from src.engines.story_engine import story_generator
   story_ = story_generator(problem_description)
-  display(Markdown(story_))
+  stream_markdown(story_)
   print("\n\n")
 
   #Generate Reflection Questions
@@ -19,7 +20,7 @@ def define_problem_statement(problem_description):
   qa_pairs_refined = {}
   for i in range(5):
     question = questions_.split("\n")[i].strip()
-    print(question)
+    stream_markdown(question)
     answer = input("Enter your answer: ")
     print("\n")
 
@@ -30,15 +31,15 @@ def define_problem_statement(problem_description):
     qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_json["Feedback"], "refined_answer": feedback_json["Refined_Version"]}
     qa_pairs_refined[i] = {"question": question, "refined_answer": feedback_json["Refined_Version"]}
 
-    display(Markdown(feedback_json["Feedback"]))
-    display(Markdown(feedback_json["Refined_Version"]))
+    stream_markdown(feedback_json["Feedback"])
+    stream_markdown(feedback_json["Refined_Version"])
     print("\n")
 
   #The final step - the problem statement
   print("\n")
-  print("Final Problem Statement")
+  stream_markdown("Final Problem Statement")
   print("\n")
-  print('''
+  stream_markdown('''
   Based on the above discussions can you give an attempt to frame the problem statement?
   Instructions: Try to address the following questions in your problem statement. 
       1. Stakeholder clarity — Is it clear who is affected?
@@ -55,7 +56,7 @@ def define_problem_statement(problem_description):
   from src.engines.evaluator_engine_ps import problem_statement_evaluator
   evaluation_ = problem_statement_evaluator(problem_statement_, qa_pairs_refined, story_)
   evaluation_json = json.loads(evaluation_)
-  display(Markdown(evaluation_json["Evaluation"]))
-  display(Markdown(evaluation_json["Refined Version"]))
+  stream_markdown(evaluation_json["Evaluation"])
+  stream_markdown(evaluation_json["Refined Version"])
 
   return({"story": story_, "qa_pairs": qa_pairs, "problem_statement": problem_statement_})
