@@ -21,7 +21,7 @@ def define_problem_statement(problem_description):
   for i in range(5):
     question = questions_.split("\n")[i].strip()
     stream_markdown(question)
-    answer = input("Enter your answer: ")
+    answer = input()
     print("\n")
 
     from src.engines.feedback_engine_ps import feedback_generator_ps
