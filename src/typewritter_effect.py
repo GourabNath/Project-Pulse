@@ -1,11 +1,22 @@
-
 import time
-from IPython.display import display, Markdown, clear_output
-import sys
+from IPython.display import display, Markdown
 
-def typewriter(text, delay=0.03):
+def stream_markdown(text: str, delay: float = 0.015):
+    """
+    Stream markdown text in a ChatGPT-like typing effect.
+    
+    Parameters
+    ----------
+    text : str
+        Markdown content to render
+    delay : float
+        Delay between characters
+    """
+
+    rendered = ""
+    handle = display(Markdown(""), display_id=True)
+
     for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
+        rendered += char
+        handle.update(Markdown(rendered))
         time.sleep(delay)
-    print()
