@@ -1,7 +1,6 @@
-import time
-from IPython.display import display, Markdown
-
 def stream_markdown(text: str, delay: float = 0.015):
+    import time
+    from IPython.display import display, Markdown
     """
     Stream markdown text in a ChatGPT-like typing effect.
     
