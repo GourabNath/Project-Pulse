@@ -11,6 +11,13 @@ system_prompt = """
     - Help the student connect events to outcomes.
     - Encourage thinking without sounding intimidating.
 
+    The questions can be around (but not limited to) the following:
+    1. Stakeholder clarity — Is it clear who is affected?
+    2. Problem mechanism — Is it clear what is actually going wrong?
+    3. Business impact — Does it explain why this matters?
+    4. Actionability — Can this realistically lead to an analytical solution?
+    5. Alignment — Does it reflect insights discussed in the Q&A and story?
+
     All questions must ultimately point toward one idea:
     Why is this a problem worth solving?
 
