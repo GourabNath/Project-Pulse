@@ -8,7 +8,7 @@ def define_problem_statement(problem_description):
   from src.engines.story_engine import story_generator
   story_ = story_generator(problem_description)
   stream_markdown(story_)
-  print("\n\n")
+  print("\n")
 
   #Generate Reflection Questions
   from src.engines.reflection_questions_engine import reflection_questions_generate
