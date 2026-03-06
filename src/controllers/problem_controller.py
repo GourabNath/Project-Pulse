@@ -38,7 +38,18 @@ def define_problem_statement(problem_description):
   print("\n")
   print("Final Problem Statement")
   print("\n")
-  problem_statement_ = input("Based on the above discussions can you give an attempt to frame the problem statement?\n")
+  print('''
+  Based on the above discussions can you give an attempt to frame the problem statement?
+  Instructions: Try to address the following questions in your problem statement. 
+      1. Stakeholder clarity — Is it clear who is affected?
+      2. Problem mechanism — Is it clear what is actually going wrong?
+      3. Business impact — Does it explain why this matters?
+      4. Actionability — Can this realistically lead to an analytical solution?
+      5. Alignment — Does it reflect insights discussed in the Q&A and story?
+      '''
+      )
+  print("\n")
+  problem_statement_ = input()
   print("\n")
 
   from src.engines.evaluator_engine_ps import problem_statement_evaluator
