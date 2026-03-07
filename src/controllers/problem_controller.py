@@ -9,7 +9,7 @@ def define_problem_statement(problem_description):
   from src.engines.story_engine import story_generator
   story_ = story_generator(problem_description)
   stream_markdown(story_)
-  print("\n")
+  #print("\n")
 
   #Generate Reflection Questions
   from src.engines.reflection_questions_engine import reflection_questions_generate
@@ -37,7 +37,7 @@ def define_problem_statement(problem_description):
     question = questions_.split("\n")[i].strip()
     stream_markdown(question)
     answer = input()
-    print("\n")
+    #print("\n")
 
     from src.engines.feedback_engine_ps import feedback_generator_ps
     feedback_ = feedback_generator_ps(story_, question, answer)
@@ -45,20 +45,26 @@ def define_problem_statement(problem_description):
     qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_}
 
     stream_markdown(feedback_)
-    print("\n")
+    #print("\n")
 
   #The final step - the problem statement
-  print("\n")
+  #print("\n")
   stream_markdown("Final Problem Statement")
-  print("\n")
+  #print("\n")
   stream_markdown('''
-  Based on the above discussions can you give an attempt to frame the problem statement?
-  **Instructions:** Try to address the following questions in your problem statement. 
+  Based on the above discussions can you give an attempt to frame the problem statement?\n
+  **Instructions:** Try to address the following questions in your problem statement.
+  
       - 1. Stakeholder clarity — Is it clear who is affected?
-      - 2. Problem mechanism — Is it clear what is actually going wrong?
+      
+      - 2. Problem mechanism — Is it clear what is actually going wrong?\n
+      
       - 3. Business impact — Does it explain why this matters?
+      
       - 4. Actionability — Can this realistically lead to an analytical solution?
+      
       - 5. Alignment — Does it reflect insights discussed in the Q&A and story?
+      
       '''
       )
   print("\n")
