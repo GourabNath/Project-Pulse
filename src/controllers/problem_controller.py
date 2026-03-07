@@ -49,7 +49,7 @@ def define_problem_statement(problem_description):
 
   #The final step - the problem statement
   print("\n")
-  stream_markdown("**Final Problem Statement**")
+  stream_markdown("**now let's construct the Analytical Problem Statement**")
   #print("\n")
   stream_markdown('''
   Based on the above discussions can you give an attempt to frame the problem statement?
@@ -76,6 +76,7 @@ def define_problem_statement(problem_description):
   evaluation_ = problem_statement_evaluator(problem_statement_, qa_pairs, story_)
   evaluation_json = json.loads(evaluation_)
   stream_markdown(evaluation_json["Evaluation"])
+  stream_markdown("**Final Problem Statement**")
   stream_markdown(evaluation_json["Refined Version"])
 
   return({"story": story_, "qa_pairs": qa_pairs, "problem_statement": problem_statement_})
