@@ -49,10 +49,11 @@ def define_problem_statement(problem_description):
 
   #The final step - the problem statement
   #print("\n")
-  stream_markdown("Final Problem Statement")
+  stream_markdown("**Final Problem Statement**")
   #print("\n")
   stream_markdown('''
-  Based on the above discussions can you give an attempt to frame the problem statement?\n
+  Based on the above discussions can you give an attempt to frame the problem statement?
+  
   **Instructions:** Try to address the following questions in your problem statement.
   
       - 1. Stakeholder clarity — Is it clear who is affected?
