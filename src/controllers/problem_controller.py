@@ -4,6 +4,7 @@ CONTROLLER_VERSION = "0.1.0"
 def define_problem_statement(problem_description):
   from IPython.display import Markdown, display
   from src.typewritter_effect import stream_markdown
+  
   #Generate Story
   from src.engines.story_engine import story_generator
   story_ = story_generator(problem_description)
@@ -17,7 +18,6 @@ def define_problem_statement(problem_description):
   #This section asks several questions to the user - makes them think - and then refine their thoughts
   import json
   qa_pairs = {}
-  #qa_pairs_refined = {}
 
   #Intrtuctions
   instructions = '''
@@ -41,14 +41,10 @@ def define_problem_statement(problem_description):
 
     from src.engines.feedback_engine_ps import feedback_generator_ps
     feedback_ = feedback_generator_ps(story_, question, answer)
-    #feedback_json = json.loads(feedback_)
 
     qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_}
-    #qa_pairs_refined[i] = {"question": question, "refined_answer": feedback_}
 
     stream_markdown(feedback_)
-    #stream_markdown(feedback_json["Feedback"])
-    #stream_markdown(feedback_json["Refined_Version"])
     print("\n")
 
   #The final step - the problem statement
@@ -57,12 +53,12 @@ def define_problem_statement(problem_description):
   print("\n")
   stream_markdown('''
   Based on the above discussions can you give an attempt to frame the problem statement?
-  Instructions: Try to address the following questions in your problem statement. 
-      1. Stakeholder clarity — Is it clear who is affected?
-      2. Problem mechanism — Is it clear what is actually going wrong?
-      3. Business impact — Does it explain why this matters?
-      4. Actionability — Can this realistically lead to an analytical solution?
-      5. Alignment — Does it reflect insights discussed in the Q&A and story?
+  **Instructions:** Try to address the following questions in your problem statement. 
+      - 1. Stakeholder clarity — Is it clear who is affected?
+      - 2. Problem mechanism — Is it clear what is actually going wrong?
+      - 3. Business impact — Does it explain why this matters?
+      - 4. Actionability — Can this realistically lead to an analytical solution?
+      - 5. Alignment — Does it reflect insights discussed in the Q&A and story?
       '''
       )
   print("\n")
@@ -70,7 +66,7 @@ def define_problem_statement(problem_description):
   print("\n")
 
   from src.engines.evaluator_engine_ps import problem_statement_evaluator
-  evaluation_ = problem_statement_evaluator(problem_statement_, qa_pairs_refined, story_)
+  evaluation_ = problem_statement_evaluator(problem_statement_, qa_pairs, story_)
   evaluation_json = json.loads(evaluation_)
   stream_markdown(evaluation_json["Evaluation"])
   stream_markdown(evaluation_json["Refined Version"])
