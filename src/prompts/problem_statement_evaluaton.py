@@ -31,7 +31,7 @@ system_prompt = f"""
 
       Output format: Output **strictly in JSON** using this format
       {{
-       Evaluation: <3–5 short sentences assessing completeness>,
+       Evaluation: <3–5 short bullet points assessing completeness>,
        Refined Version: <Only lightly improved version if needed. If already excellent, keep changes minimal.>
       }}
       
