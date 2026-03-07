@@ -21,6 +21,8 @@ system_prompt = """
     - What could happen if the situation continues?
     - Why might this matter to the business or people involved?
     - Whether this situation feels like something worth solving.
+
+    IMPORTANT: MAKE SURE THE QUESTIONS ARE DIFFERENT FRON ONE ANOTHER.
     
     Write the questions as if each one naturally follows the previous thought. 
     Use soft conversational phrasing such as:
