@@ -17,7 +17,22 @@ def define_problem_statement(problem_description):
   #This section asks several questions to the user - makes them think - and then refine their thoughts
   import json
   qa_pairs = {}
-  qa_pairs_refined = {}
+  #qa_pairs_refined = {}
+
+  #Intrtuctions
+  instructions = '''
+  Before we move ahead, we’ll pause for a moment and reflect on a few business questions related to the story you just read.
+
+  You’ll see these questions one at a time. Take a moment to think about them and write down whatever comes to mind.
+  
+  There are no perfect answers here. The goal is simply to explore the situation and see what you notice.
+  
+  If a question feels difficult or you’re unsure, that’s completely okay — you can simply type **PASS** and move on to the next one.
+  
+  But if you do give it a try, you might find it to be a fun little exercise in thinking like a business analyst.
+  '''
+  stream_markdown(instructions)
+
   for i in range(5):
     question = questions_.split("\n")[i].strip()
     stream_markdown(question)
@@ -26,13 +41,14 @@ def define_problem_statement(problem_description):
 
     from src.engines.feedback_engine_ps import feedback_generator_ps
     feedback_ = feedback_generator_ps(story_, question, answer)
-    feedback_json = json.loads(feedback_)
+    #feedback_json = json.loads(feedback_)
 
-    qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_json["Feedback"], "refined_answer": feedback_json["Refined_Version"]}
-    qa_pairs_refined[i] = {"question": question, "refined_answer": feedback_json["Refined_Version"]}
+    qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_}
+    #qa_pairs_refined[i] = {"question": question, "refined_answer": feedback_}
 
-    stream_markdown(feedback_json["Feedback"])
-    stream_markdown(feedback_json["Refined_Version"])
+    stream_markdown(feedback_)
+    #stream_markdown(feedback_json["Feedback"])
+    #stream_markdown(feedback_json["Refined_Version"])
     print("\n")
 
   #The final step - the problem statement
