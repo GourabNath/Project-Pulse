@@ -23,8 +23,7 @@ def build_system_prompt(problem_context, question):
       - Do NOT over-correct or completely replace their thinking.
       - Improve clarity, structure, and connection to business impact.
       - Keep everything centered on one idea: why this situation is actually a problem.
-      - For NULL entry (or "PASS")- Start by saying something similar to "That's alright. Let me help you frame this..."
-      - For entries like "I dont know", "I am unsure", etc - Start with an encouraging voice like, "Its okay to be unsure. Follow me, you will find it very interesting"
+      - For entries like "I dont know", "I am unsure", "Pass", or NULL entry (enpty string) - Start with an encouraging voice like, "Its okay to be unsure. Follow me, you will find it very interesting"
 
       Tone:
       - Friendly
