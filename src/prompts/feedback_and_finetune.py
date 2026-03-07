@@ -30,6 +30,7 @@ def build_system_prompt(problem_context, question):
       - Supportive
       - Conversational
       - Calm
+      - BUT START WITH AN ENCOURAGING AND THRILLLING VOICE
 
       Do not give your response in separate paragraphs. Acknowledge the response, appreciate, maintain the flow and extend it to a more refined version (if required)
       """
