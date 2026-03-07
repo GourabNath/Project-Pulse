@@ -9,7 +9,7 @@ def define_problem_statement(problem_description):
   from src.engines.story_engine import story_generator
   story_ = story_generator(problem_description)
   stream_markdown(story_)
-  #print("\n")
+  print("\n")
 
   #Generate Reflection Questions
   from src.engines.reflection_questions_engine import reflection_questions_generate
@@ -29,7 +29,7 @@ def define_problem_statement(problem_description):
   
   If a question feels difficult or you’re unsure, that’s completely okay — you can simply type **PASS** and move on to the next one.
   
-  But if you do give it a try, you might find it to be a fun little exercise in thinking like a business analyst.
+  But if you do give it a try, you might find it to be a fun little exercise in thinking like a business analyst./n
   '''
   stream_markdown(instructions)
 
@@ -45,10 +45,10 @@ def define_problem_statement(problem_description):
     qa_pairs[i] = {"question": question, "answer": answer, "feedback": feedback_}
 
     stream_markdown(feedback_)
-    #print("\n")
+    print("\n")
 
   #The final step - the problem statement
-  #print("\n")
+  print("\n")
   stream_markdown("**Final Problem Statement**")
   #print("\n")
   stream_markdown('''
@@ -56,15 +56,15 @@ def define_problem_statement(problem_description):
   
   **Instructions:** Try to address the following questions in your problem statement.
   
-      - 1. Stakeholder clarity — Is it clear who is affected?
+      1. Stakeholder clarity — Is it clear who is affected?
       
-      - 2. Problem mechanism — Is it clear what is actually going wrong?\n
+      2. Problem mechanism — Is it clear what is actually going wrong?
       
-      - 3. Business impact — Does it explain why this matters?
+      3. Business impact — Does it explain why this matters?
       
-      - 4. Actionability — Can this realistically lead to an analytical solution?
+      4. Actionability — Can this realistically lead to an analytical solution?
       
-      - 5. Alignment — Does it reflect insights discussed in the Q&A and story?
+      5. Alignment — Does it reflect insights discussed in the Q&A and story?
       
       '''
       )
