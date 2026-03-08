@@ -22,6 +22,7 @@ def extract_metadata(df, column):
     return metadata
 
 
+from src.llm_client import generate_response
 def generate_variable_description(variable_name, problem, metadata):
   import json
   system_prompt = """
@@ -133,6 +134,4 @@ def generate_variable_description(variable_name, problem, metadata):
       {"role":"user", "content":user_prompt}
       ]
 
-  client = OpenAI()
-  response = client.chat.completions.create(model="gpt-4.1-nano", messages=messages)
-  return response.choices[0].message.content
+  return generate_response(messages)
