@@ -4,10 +4,10 @@ from src.llm_client import generate_response
 def feedback_generator_ps(problem_context, question, answer) -> str:
   '''
   Description: This function evaluated user response for a reflecting question.
-  Input: 
-    problem_context: a story related to the problem (str).
-    question: a system generated reflecting question related to the problem (str).
-    answer: the answer entered by the user corresponding to the question (str).
+  Input: This function takes 3 inputs,
+    - problem_context: a story related to the problem (str).
+    - question: a system generated reflecting question related to the problem (str).
+    - answer: the answer entered by the user corresponding to the question (str).
   Output: evaluation of the answer and finetuned response (str).
   '''
   messages = [
