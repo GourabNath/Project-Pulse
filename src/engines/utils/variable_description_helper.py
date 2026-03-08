@@ -37,6 +37,22 @@ def extract_metadata(df, column):
 from src.llm_client import generate_response
 def generate_variable_description(variable_name, problem, metadata):
   import json
+  '''
+  Description: This function helps to generate variable description and identify variable type (with reasoning) for a selected variable from a dataframe.
+  Input: This function takes 3 inputs:
+      - variable_name: the name of a variable from the dataset (str).
+      - problem: a story for the problem on interest (str).
+      - metadata: metadata corrsponding to the variable like dtype, nunique, sample data, summary, etc (json).
+  Output: outputs a json file with the following info,
+      - variable description,
+      - variable type (Continuous | Discrete | Nominal | Ordinal)
+      - reason for variable type.
+
+  '''
+
+
+
+    
   system_prompt = """
       You are a data science assistant helping document dataset variables.
 
