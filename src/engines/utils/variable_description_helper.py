@@ -1,5 +1,17 @@
 
 def extract_metadata(df, column):
+    '''
+    Description: This functions helps to get take a snapshot of a variable like data type, summary, etc.
+    Input: function takes two inputs,
+        - df: the dataframe of our interest (pandas df).
+        - column: the variable of interest present in df (str).
+    Output: a dictionary containing the following:
+        - data type of the variable,
+        - number of unique values,
+        - list containing a sample of values,
+        - summaried like min, max, mean for a numerical variable,
+        - freqency distribution for a categorical variable.
+    '''
 
     col = df[column]
 
