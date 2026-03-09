@@ -1,6 +1,6 @@
 
 from src.prompts.reflection_questions import system_prompt, build_user_prompt
-from src.llm_client import generate_response
+from src.core.llm_client import generate_response
 
 
 def reflection_questions_generate(story: str) -> str:
