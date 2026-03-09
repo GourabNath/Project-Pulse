@@ -3,7 +3,7 @@ CONTROLLER_VERSION = "0.1.0"
 
 def define_problem_statement(problem_description):
   from IPython.display import Markdown, display
-  from src.typewritter_effect import stream_markdown
+  from src.engines.utils.typewriter import stream_markdown
 
   '''
   Description: This function is user-facing. Once turned on, it started interacting with the user.
