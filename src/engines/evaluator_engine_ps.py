@@ -1,6 +1,6 @@
 
 from src.prompts.problem_statement_evaluaton import system_prompt, build_user_prompt
-from src.llm_client import generate_response
+from src.core.llm_client import generate_response
 
 def problem_statement_evaluator(problem_statement, qa_discussion, story):
   '''
