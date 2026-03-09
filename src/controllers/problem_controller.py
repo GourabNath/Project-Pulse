@@ -4,6 +4,21 @@ CONTROLLER_VERSION = "0.1.0"
 def define_problem_statement(problem_description):
   from IPython.display import Markdown, display
   from src.typewritter_effect import stream_markdown
+
+  '''
+  Description: This function is user-facing. Once turned on, it started interacting with the user.
+    - START: It starts with a story related to the problem.
+    - MID: It asks 3-5 reflecting questions and records and evaluate the user answers.
+    - END: It ends by helping the user construct an analytical problem statement.
+  
+  Input: This function takes only one input,
+    - problem_description: a story description of the problem of interest (str). This is called by the story_generator() function. 
+
+  Output: The output is a structured json storing the following,
+    - the generated story
+    - question, answer, evaluation
+    - the final problem statement
+  '''
   
   #Generate Story
   from src.engines.story_engine import story_generator
