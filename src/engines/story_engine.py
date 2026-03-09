@@ -1,5 +1,5 @@
 from src.prompts.story import SYSTEM_PROMPT, build_user_prompt
-from src.llm_client import generate_response
+from src.core.llm_client import generate_response
 
 
 def story_generator(problem_description: str) -> str:
