@@ -1,5 +1,6 @@
 import time
 from src.engines.utils.typewriter import stream_markdown
+from src.engines.utils.print_multiple_lines import print_multiple_lines
 
 def variable_identification(variable_df, row_description):
   intro_message = '''
