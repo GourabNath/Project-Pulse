@@ -1,5 +1,38 @@
-def variable_identification(variable_df):
+def variable_identification(variable_df, row_description):
   import time
+
+  intro_message = '''
+  ## MODULE 2: IDENTIFICATION OF VARIABLE TYPES
+  
+  In this module you will spend some time to understand the variables you have in your dataset. You will also determine the variable type of each variable. 
+  This is a very important step before you do your data analysis. Identifying the variable type will guide you towards the right choice of analysis you should perform for each variable.
+  Hence, this is your must do step before you start your EDA and data analysis.
+
+  '''
+
+  intro_rows = '''
+  **Rows**: One small step before you jump into the columns.
+  Ask yourself, what does each row in the dataset represent? Each row represents an entity.
+  In this problem, %s
+
+  This is often the most ignored step. why do you need it? Because all your data interpretation and reporting depends on this identification. 
+
+  ''' %row_description
+
+  intro_variable = '''
+  **Columns**: Each column in the dataset represent a variable. From a Statistical perspective, a variable is a characterestics of an entity.
+
+  '''
+
+
+  stream_markdown(intro_message)
+  print("\n")
+  stream_markdown(intro_rows)
+  print("\n")
+  stream_markdown(intro_variable)
+  print("\n")
+
+
   for i in range(1,13):
     if i not in (4,6,10,12):
       stream_markdown("**"+ variable_df.loc[variable_df.useExample == i, "variable"] +"**")
