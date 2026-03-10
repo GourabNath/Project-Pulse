@@ -1,8 +1,6 @@
-from src.engines.utils.typewriter import stream_markdown
-
 def variable_identification(variable_df, row_description):
   import time
-
+  from src.engines.utils.typewriter import stream_markdown
   intro_message = '''
   ## MODULE 2: IDENTIFICATION OF VARIABLE TYPES
   
