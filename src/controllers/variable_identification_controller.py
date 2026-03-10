@@ -1,3 +1,5 @@
+from src.engines.utils.typewriter import stream_markdown
+
 def variable_identification(variable_df, row_description):
   import time
 
