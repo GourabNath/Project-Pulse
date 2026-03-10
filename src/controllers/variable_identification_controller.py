@@ -1,8 +1,8 @@
 
 def variable_identification(variable_df):
   import time
-  for i in range(1,7):
-    if i not in (4,6):
+  for i in range(1,13):
+    if i not in (4,6,10,12):
       stream_markdown("**"+ variable_df.loc[variable_df.useExample == i, "variable"] +"**")
       variable_description = variable_df.loc[variable_df.useExample == i, "variable_description"]
       print_multiple_lines(variable_description)
@@ -41,7 +41,7 @@ def variable_identification(variable_df):
       print("\n\n")
 
 
-      #Examples of discrete data types
+    #Examples of discrete data types
     if i == 6:
       stream_markdown("*Similarly, you won't find it difficult to identify that the following variables are discrete:*")
       print("\n")
@@ -53,3 +53,34 @@ def variable_identification(variable_df):
           stream_markdown(variable_description)
           stream_markdown("\n" + "-"*80 + "\n")
       print("\n\n")
+
+    
+    #Examples of Nominal data types
+    if i == 10:
+      stream_markdown("*Similarly, you won't find it difficult to identify that the following variables are nominal:*")
+      print("\n")
+      df_subset = variable_df.loc[variable_df.useExample == i, ["variable", "variable_description", "useExample"]]
+      df_subset = df_subset[~df_subset["useExample"].isin([1,2,3,4,5,7,8,9])].reset_index(drop=True)
+      for index in range(0, len(df_subset)):
+          stream_markdown("**"+ df_subset.loc[index, "variable"] +"**")
+          variable_description = df_subset.loc[index, "variable_description"]
+          stream_markdown(variable_description)
+          stream_markdown("\n" + "-"*80 + "\n")
+      print("\n\n")
+
+
+    #Examples of ordinal data types
+    if i == 12:
+      stream_markdown("*Similarly, you won't find it difficult to identify that the following variables are ordinal:*")
+      print("\n")
+      df_subset = variable_df.loc[variable_df.useExample == i, ["variable", "variable_description", "useExample"]]
+      df_subset = df_subset[~df_subset["useExample"].isin([1,2,3,4,5,7,8,9,11])].reset_index(drop=True)
+      for index in range(0, len(df_subset)):
+          stream_markdown("**"+ df_subset.loc[index, "variable"] +"**")
+          variable_description = df_subset.loc[index, "variable_description"]
+          stream_markdown(variable_description)
+          stream_markdown("\n" + "-"*80 + "\n")
+      print("\n\n")
+
+    
+    
