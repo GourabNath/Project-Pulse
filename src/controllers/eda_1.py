@@ -34,10 +34,12 @@ def univariate_eda_num(df_path, meta_data_path):
 
       print(df[eda['variable']].describe())
       stream_markdown("\n" + "-"*80 + "\n")
+      print("Press ENTER to continue")
+      input()
 
       #time.sleep(0.5)
       print("\n")
-      stream_markdown("*Now let's discuss how we can interpret and report these results.*")
+      stream_markdown("*Now let's discuss how we can interpret and report these results...*")
       print("\n")
       
       for key in eda["statistics"].keys():
@@ -47,7 +49,8 @@ def univariate_eda_num(df_path, meta_data_path):
       print("\n")
       stream_markdown(eda['remark'])
       print("\n\n")
-      input("Press ENTER to continue")
+      print("Press ENTER to continue")
+      input()
 
       #-----------------
       # GRAPHICAL ANALYSIS - HISTOGRAM
@@ -57,26 +60,28 @@ def univariate_eda_num(df_path, meta_data_path):
       hist = meta_data_dict['eda1_univariate']['numeric']['histogram']
       stream_markdown(hist["intro"])
       stream_markdown("\n" + "-"*80 + "\n")
-      stream_markdown("Use the code below to plot the histogram.")
+      stream_markdown("Use the **code** below to plot the **histogram**.")
       stream_markdown(hist["code"])
       stream_markdown("\n" + "-"*80 + "\n")
       print("\n")
 
+      time.sleep(1)
       #plt.figure(figsize=(6, 4))
       df[eda['variable']].hist(bins=10)                   # Plot histogram with 10 bins
-      plt.title('Distribution of ' + eda['variable']) # Add a title
+      plt.title('Distribution of ' + eda['variable'])     # Add a title
       plt.xlabel(eda['variable'])                         # Add x-axis label
-      plt.ylabel('Frequency')                   # Add y-axis label
-      plt.grid(axis='y', alpha=0.2)             # Add transparency to grid lines
+      plt.ylabel('Frequency')                             # Add y-axis label
+      plt.grid(axis='y', alpha=0.2)                       # Add transparency to grid lines
       plt.grid(axis='x', alpha=0.2)
       plt.show()
 
       print("\n")
       stream_markdown("\n" + "-"*80 + "\n")
-      stream_markdown(hist["observation"])
+      stream_markdown("**Observation:** " + hist["observation"])
       stream_markdown("\n" + "-"*80 + "\n")
       print("\n\n")
-      input("Press ENTER to continue")
+      print("Press ENTER to continue")
+      input()
 
       #----------------
       # GRAPHICAL ANALYSIS - BOXPLOT
@@ -85,14 +90,16 @@ def univariate_eda_num(df_path, meta_data_path):
 
       box = meta_data_dict['eda1_univariate']['numeric']['boxplot']
       stream_markdown(box["intro"])
-      stream_markdown("Use the code below to plot the boxplot.")
+      stream_markdown("Use the **code** below to plot the **boxplot**.")
+      stream_markdown("\n" + "-"*80 + "\n")
       stream_markdown(box["code"])
       stream_markdown("\n" + "-"*80 + "\n")
       print("\n")
 
       import matplotlib.pyplot as plt
 
-      #plt.figure(figsize=(6, 4))                      # Create a new figure with a specified size
+      time.sleep(1)
+      #plt.figure(figsize=(6, 4))                     # Create a new figure with a specified size
       plt.boxplot(df[eda['variable']])                # Create a boxplot of the 'Age' column from the DataFrame 'df'
       plt.title('Boxplot of ' + eda['variable'])      # Add a title to the boxplot
       plt.ylabel(eda['variable'])                     # Add a label to the y-axis
@@ -101,9 +108,10 @@ def univariate_eda_num(df_path, meta_data_path):
 
       print("\n")
       stream_markdown("\n" + "-"*80 + "\n")
-      stream_markdown(box["observation"])
+      stream_markdown("**Observation:** " + box["observation"])
       stream_markdown("\n" + "-"*80 + "\n")
       print("\n\n")
 
-      input("Press ENTER to continue")
-      stream_markdown(meta_data_dict['eda1_univariate']['numeric']['Next steps'])
+      print("Press ENTER to continue")
+      input()
+      stream_markdown(meta_data_dict['eda1_univariate']['numeric']['Next steps'].replace("  ", "").replace("\t", ""))
