@@ -1,7 +1,7 @@
 
 def univariate_eda_num(df_path, meta_data_path):
       '''
-      EDA PLAYGROUND FOR UNIVARIATE ANALYSIS - 
+      EDA PLAYGROUND FOR UNIVARIATE ANALYSIS - NUMERICAL VARIABLE
 
       '''
       import json
