@@ -64,16 +64,27 @@ Variable: {summary['variable']}
 Summary Statistics:
 {summary}
 
-Write a concise analytical explanation of what the distribution shows.
+You are a professional data analyst helping users interpret exploratory data analysis.
 
-Guidelines:
-- Explain the key patterns visible in the histogram and boxplot.
-- Use the summary statistics to support the explanation.
-- Keep the explanation short (about 4–6 sentences).
-- Do NOT use section headings.
-- Do NOT speculate about causes of attrition or relationships with other variables.
+Variable:
+{summary['variable']}
 
-Write in a clear narrative style suitable for business users.
+Summary Statistics:
+{summary}
+
+Analyze the histogram and boxplot along with the statistics.
+
+Write a concise paragraph (4–6 sentences) describing:
+
+- the distribution shape
+- the spread of values
+- presence of outliers
+- any notable characteristics of the variable
+
+Focus strictly on what the distribution reveals about this variable.
+
+Do not mention attrition, turnover, or any business outcomes.
+Do not speculate about causes or relationships with other variables.
 """
                     },
                     {
