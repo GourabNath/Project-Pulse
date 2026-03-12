@@ -90,6 +90,9 @@ statistical properties.
 Use statistics only to support an observation, not as the main focus
 of the sentence.
 
+End the explanation by summarizing what the variable reveals about the dataset itself.
+Do not connect the observation to outcomes, performance, or business results.
+
 Frame the explanation around the entity described in the problem context rather than repeatedly referring to "the distribution".
 
 """
