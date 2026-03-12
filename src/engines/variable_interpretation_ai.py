@@ -74,17 +74,16 @@ Summary Statistics:
 
 Analyze the histogram and boxplot along with the statistics.
 
-Write a concise paragraph (4–6 sentences) describing:
+Guidelines:
+- Explain the key patterns visible in the histogram and boxplot.
+- Use the summary statistics to support the explanation.
+- Connect the observed patterns to the entity described in the problem context so the explanation feels grounded in the real-world scenario.
+- Keep the explanation short (about 4–6 sentences).
+- Do NOT infer causes, outcomes, or relationships with other variables.
+- Limit the explanation strictly to what can be observed in this single variable.
 
-- the distribution shape
-- the spread of values
-- presence of outliers
-- any notable characteristics of the variable
+Frame the explanation around the entity described in the problem context rather than repeatedly referring to "the distribution".
 
-Focus strictly on what the distribution reveals about this variable.
-
-Do not mention attrition, turnover, or any business outcomes.
-Do not speculate about causes or relationships with other variables.
 """
                     },
                     {
