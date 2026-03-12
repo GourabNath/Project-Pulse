@@ -64,13 +64,16 @@ Variable: {summary['variable']}
 Summary Statistics:
 {summary}
 
-Analyze the histogram and boxplot along with the statistics.
+Write a concise analytical explanation of what the distribution shows.
 
-Write a concise professional paragraph describing:
-- distribution shape
-- presence of outliers
-- notable characteristics
-- possible implications for the business problem.
+Guidelines:
+- Explain the key patterns visible in the histogram and boxplot.
+- Use the summary statistics to support the explanation.
+- Keep the explanation short (about 4–6 sentences).
+- Do NOT use section headings.
+- Do NOT speculate about causes of attrition or relationships with other variables.
+
+Write in a clear narrative style suitable for business users.
 """
                     },
                     {
