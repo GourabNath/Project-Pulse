@@ -31,7 +31,7 @@ def get_plot_paths(variable_path):
     return histogram_path, boxplot_path
 
 
-def interpret_variable_engine(variable_path, problem_context):
+def variable_interpretation_engine(variable_path, problem_context):
 
     # Load summary
     summary = load_summary(variable_path)
