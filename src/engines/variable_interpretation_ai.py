@@ -82,6 +82,14 @@ Guidelines:
 - Do NOT infer causes, outcomes, or relationships with other variables.
 - Limit the explanation strictly to what can be observed in this single variable.
 
+Write the explanation as if you are walking a reader through the charts
+and helping them notice what stands out. Focus on describing the
+observable patterns in a natural narrative rather than listing
+statistical properties.
+
+Use statistics only to support an observation, not as the main focus
+of the sentence.
+
 Frame the explanation around the entity described in the problem context rather than repeatedly referring to "the distribution".
 
 """
