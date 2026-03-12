@@ -72,7 +72,11 @@ Variable:
 Summary Statistics:
 {summary}
 
-Analyze the histogram and boxplot along with the statistics.
+Use the histogram, boxplot, and summary statistics together to explain the most noticeable patterns in the variable.
+Blend these sources of evidence naturally in the narrative rather than discussing them separately. 
+Do not describe the histogram, boxplot, and statistics in separate sentences unless necessary.
+Integrate them naturally while explaining the observed pattern.
+Prioritize describing what stands out in the variable before mentioning specific charts or statistics.
 
 Guidelines:
 - Explain the key patterns visible in the histogram and boxplot.
