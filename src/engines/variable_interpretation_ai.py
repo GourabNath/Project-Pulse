@@ -72,32 +72,35 @@ Variable:
 Summary Statistics:
 {summary}
 
-Use the histogram, boxplot, and summary statistics together to explain the most noticeable patterns in the variable.
-Blend these sources of evidence naturally in the narrative rather than discussing them separately. 
-Do not describe the histogram, boxplot, and statistics in separate sentences unless necessary.
-Integrate them naturally while explaining the observed pattern.
-Prioritize describing what stands out in the variable before mentioning specific charts or statistics.
+Interpret the distribution of a single variable using the histogram,
+boxplot, and summary statistics as evidence.
+
+First identify the most distinctive characteristic of the distribution
+(e.g., concentration, skew, spread, clustering, or outliers).
+Build the explanation around this observation.
+
+Blend evidence from the histogram, boxplot, and statistics naturally
+rather than describing each chart separately.
+
+Focus on describing how the values are distributed rather than
+describing the charts themselves.
 
 Guidelines:
-- Explain the key patterns visible in the histogram and boxplot.
-- Use the summary statistics to support the explanation.
-- Connect the observed patterns to the entity described in the problem context so the explanation feels grounded in the real-world scenario.
-- Keep the explanation short (about 4–6 sentences).
-- Do NOT infer causes, outcomes, or relationships with other variables.
-- Limit the explanation strictly to what can be observed in this single variable.
 
-Write the explanation as if you are walking a reader through the charts
-and helping them notice what stands out. Focus on describing the
-observable patterns in a natural narrative rather than listing
-statistical properties.
+- Lead with the most noticeable pattern in the variable.
+- Use statistics only to support an observation.
+- Mention charts only when they strengthen the explanation.
+- Do not describe the histogram or boxplot step-by-step.
+- Do not speculate about causes, roles, outcomes, or business meaning.
+- Refer to the dataset or records rather than assuming real-world roles.
+- Use vivid analytical language such as "cluster", "spread", "extend",
+  "concentrate", or "taper" instead of generic phrases like
+  "the histogram shows".
 
-Use statistics only to support an observation, not as the main focus
-of the sentence.
+Keep the explanation concise (4–6 sentences).
 
-End the explanation by summarizing what the variable reveals about the dataset itself.
-Do not connect the observation to outcomes, performance, or business results.
-
-Frame the explanation around the entity described in the problem context rather than repeatedly referring to "the distribution".
+End with a short observation about what this variable reveals about
+the range or variability present in the dataset.
 
 """
                     },
