@@ -1,3 +1,5 @@
+VERSION = "v1.0"
+PROMPT_VERSION = "v1.0"
 
 # AI-Interpretation of graphs and summary
 import os
@@ -89,7 +91,7 @@ Guidelines:
 - Do NOT infer causes, outcomes, or relationships with other variables.
 - Limit the explanation strictly to what can be observed in this single variable.
 - Avoid phrases like "the most distinctive characteristic". 
-- You should come up with more create startting point and keep the start very generic.
+- The start shouldn't sound very generic and dull.
 
 Write the explanation as if you are walking a reader through the charts
 and helping them notice what stands out. Focus on describing the
