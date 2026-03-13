@@ -75,9 +75,15 @@ Summary Statistics:
 Interpret the distribution of a single variable using the histogram,
 boxplot, and summary statistics as evidence.
 
-First identify the most distinctive characteristic of the distribution
-(e.g., concentration, skew, spread, clustering, or outliers).
-Build the explanation around this observation.
+Before writing, internally determine the most distinctive characteristic
+of the distribution (such as concentration, skew, clustering, wide spread,
+or outliers). Use this insight to guide the explanation.
+
+Do not explicitly state this step or begin with phrases like
+"The most distinctive characteristic".
+
+Vary sentence openings and avoid repeating the same structural
+phrases across explanations.
 
 Blend evidence from the histogram, boxplot, and statistics naturally
 rather than describing each chart separately.
@@ -101,6 +107,8 @@ Keep the explanation concise (4–6 sentences).
 
 End with a short observation about what this variable reveals about
 the range or variability present in the dataset.
+
+Frame the explanation around the entity described in the problem context rather than repeatedly referring to "the distribution".
 
 """
                     },
