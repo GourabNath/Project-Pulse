@@ -124,3 +124,28 @@ Frame the explanation around the entity described in the problem context rather 
     interpretation = response.output_text
 
     return interpretation, latency
+
+
+
+# Parallel processing
+from concurrent.futures import ThreadPoolExecutor
+
+def interpret_variables_parallel(variable_paths, problem_context, max_workers=5):
+    results = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        outputs = executor.map(
+            lambda path: vi.variable_interpretation_engine(path, problem_context),
+            variable_paths
+        )
+
+        for path, result in zip(variable_paths, outputs):
+            variable_name = path.split("/")[-1]
+
+            interpretation, latency = result
+
+            results[variable_name] = {
+                "interpretation": interpretation,
+                "latency": latency
+            }
+
+    return results
