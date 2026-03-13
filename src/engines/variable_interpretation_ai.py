@@ -1,4 +1,4 @@
-VERSION = "v1.0"
+VERSION = "v1.0.1"
 PROMPT_VERSION = "v1.0"
 
 # AI-Interpretation of graphs and summary
@@ -134,7 +134,7 @@ def interpret_variables_parallel(variable_paths, problem_context, max_workers=5)
     results = {}
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         outputs = executor.map(
-            lambda path: vi.variable_interpretation_engine(path, problem_context),
+            lambda path: variable_interpretation_engine(path, problem_context),
             variable_paths
         )
 
