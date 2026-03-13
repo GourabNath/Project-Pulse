@@ -16,6 +16,6 @@ def stream_markdown(text: str, delay: float = 0.015):
     handle = display(Markdown(""), display_id=True)
 
     for char in text:
-        rendered += char
+        rendered += str(char)
         handle.update(Markdown(rendered))
         time.sleep(delay)
