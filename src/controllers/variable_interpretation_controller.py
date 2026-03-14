@@ -10,6 +10,8 @@ def variable_interpretation_controller(df, variable_path, problem_context, thres
         problem_context
     )
 
+    variable_name = variable_path.split("/")[-1]
+
     deep_gate = 0
     for tool, info in tool_plan.items():
             if info["confidence"] >= threshold:
@@ -17,7 +19,7 @@ def variable_interpretation_controller(df, variable_path, problem_context, thres
               break
 
     if deep_gate == 1:
-      series = df[variable]
+      series = df[variable_name]
       tool_results = run_selected_tools(series, tool_plan, threshold=threshold)
       deep_story = deep_storyteller(base_interpretation, tool_results, problem_context)
     else:
