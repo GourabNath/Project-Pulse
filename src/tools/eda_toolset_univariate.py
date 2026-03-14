@@ -4,6 +4,20 @@ import numpy as np
 
 # Tail profiling (right)
 def right_tail_percentiles(series: pd.Series):
+    '''
+    Activation:
+    Used when the interpretation suggests a right skew, long upper tail, or unusually large maximum values compared to Q3.
+    
+    What it analyzes:
+    Computes high percentiles (e.g., P90, P95, P99) to understand how rapidly the distribution expands in the upper tail.
+    
+    Example:
+    Q3 = 20, max = 150  
+    P90 = 22  
+    P95 = 30  
+    P99 = 120  
+    Interpretation: Most values remain below ~30 but a very small fraction extends dramatically higher.
+    '''
     s = series.dropna()
     return {
         "p80": float(s.quantile(0.90)),
@@ -15,8 +29,25 @@ def right_tail_percentiles(series: pd.Series):
         "max": float(s.max())
     }
 
+
+
+
 # Tail profiling (left)
 def left_tail_percentiles(series: pd.Series):
+    '''
+    Activation:
+    Used when the interpretation suggests a left skew, long lower tail, or unusually small minimum values compared to Q1.
+    
+    What it analyzes:
+    Computes low percentiles (e.g., P1, P5, P10) to determine how far the distribution stretches toward smaller values.
+    
+    Example:
+    Q1 = 40, min = 2  
+    P10 = 35  
+    P5 = 25  
+    P1 = 4  
+    Interpretation: Most observations stay above ~35 but a few extend much lower.
+    '''
     s = series.dropna()
     return {
         "p80": float(s.quantile(0.20)),
@@ -28,8 +59,31 @@ def left_tail_percentiles(series: pd.Series):
     }
 
 
+
+
 # Outlier analysis
 def outlier_analysis(series: pd.Series):
+    '''
+    Activation:
+    Triggered when boxplot whiskers appear long or when max/min seem far from the central range.
+    
+    What it analyzes:
+    Uses the IQR rule to identify observations outside the normal spread.
+    
+    Method:
+    Lower Bound = Q1 − 1.5 × IQR  
+    Upper Bound = Q3 + 1.5 × IQR
+    
+    Example:
+    Q1 = 10  
+    Q3 = 20  
+    IQR = 10  
+    
+    Upper bound = 35  
+    
+    Values above 35 are classified as outliers.
+
+    '''
     s = series.dropna()
 
     q1 = s.quantile(0.25)
