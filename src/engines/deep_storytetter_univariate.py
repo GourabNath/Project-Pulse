@@ -1,4 +1,6 @@
+from openai import OpenAI
 client = OpenAI()
+
 # Deep Storyteller
 def deep_storyteller(base_interpretation, tool_results, problem_context):
 
