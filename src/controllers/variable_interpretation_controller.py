@@ -7,7 +7,7 @@ from src.engines.utils.animation import *
 def variable_interpretation_controller(variable_path, problem_context, threshold=80):
     base_interpretation, tool_plan, latency = variable_interpretation_engine(
         variable_path,
-        prob_context
+        problem_context
     )
 
     deep_gate = 0
