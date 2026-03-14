@@ -35,7 +35,7 @@ def variable_interpretation_controller(df, variable_path, problem_context, thres
 
 from concurrent.futures import ThreadPoolExecutor
 
-def interpret_variables_parallel_ai(variable_paths, problem_context, max_workers=5):
+def interpret_variables_parallel_ai(df, variable_paths, problem_context, max_workers=5):
     """
     Parallel version of variable interpretation using a simple executor.map pattern.
 
@@ -55,7 +55,7 @@ def interpret_variables_parallel_ai(variable_paths, problem_context, max_workers
         
         # Run controller in parallel for all variable paths
         outputs = executor.map(
-            lambda path: variable_interpretation_controller(path, problem_context),
+            lambda path: variable_interpretation_controller(df, path, problem_context),
             variable_paths
         )
 
@@ -72,14 +72,14 @@ def interpret_variables_parallel_ai(variable_paths, problem_context, max_workers
 from src.engines.utils.typewriter import stream_markdown
 import time
 
-def run_variable_interpretation_controller(variable_list, problem_context, run_path):  
+def run_variable_interpretation_controller(df, variable_list, problem_context, run_path):  
   start = time.time()
   variable_paths = []
   for variable in variable_list:
     variable_path = run_path + "/" + variable
     variable_paths.append(variable_path)
   
-  result = interpret_variables_parallel_ai(variable_paths, problem_context)
+  result = interpret_variables_parallel_ai(df, variable_paths, problem_context)
   stop = time.time()
   duration = stop - start
 
