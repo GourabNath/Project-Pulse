@@ -109,8 +109,29 @@ def outlier_analysis(series: pd.Series):
     }
 
 
+
+
 # clustering or concentration of values - This supports investigations like “values cluster between 1–5” seen in histograms.
 def bin_distribution(series: pd.Series):
+    '''
+    Activation:
+    Used when the histogram suggests clustering or uneven concentration of observations across ranges.
+    
+    What it analyzes:
+    Divides the variable range into bins and counts observations in each bin to measure where values are concentrated.
+    
+    Example:
+    Range: 0–50  
+    
+    Bins:
+    0–10 → 60 observations  
+    10–20 → 25 observations  
+    20–30 → 10 observations  
+    30–40 → 3 observations  
+    40–50 → 2 observations  
+    
+    Interpretation: Majority of observations cluster in the lower range.
+    '''
     s = series.dropna()
 
     k = int(np.ceil(np.log2(len(s)) + 1))
@@ -125,6 +146,23 @@ def bin_distribution(series: pd.Series):
 
 #Analyse data with large variance
 def variability_analysis(series: pd.Series):
+    '''
+    Activation:
+    Triggered when the spread of the variable appears unusually wide relative to its average.
+    
+    What it analyzes:
+    Measures variability using standard deviation, variance, and coefficient of variation.
+    
+    Method:
+    Coefficient of Variation = std / mean
+    
+    Example:
+    mean = 20  
+    std = 25  
+    CV = 1.25  
+    
+    Interpretation: The variable varies more than its average magnitude, indicating high dispersion.
+    '''
     s = series.dropna()
 
     mean = s.mean()
@@ -141,7 +179,24 @@ def variability_analysis(series: pd.Series):
 
 
 
+
+
 def missing_analysis(series: pd.Series):
+    '''
+    Activation:
+    Used when missing values are present or when the summary indicates a non-zero missing percentage.
+    
+    What it analyzes:
+    Counts missing values and computes the percentage of missing observations.
+    
+    Example:
+    Total records = 1000  
+    Missing = 120  
+    
+    Missing percent = 12%
+    
+    Interpretation: A meaningful portion of the data is absent and may influence analysis.
+    '''
     total = len(series)
     missing = series.isna().sum()
 
@@ -152,7 +207,25 @@ def missing_analysis(series: pd.Series):
     }
 
 
+
+
+
 def tight_distribution(series: pd.Series):
+    '''
+    Activation:
+    Triggered when the histogram appears very narrow or when standard deviation is small relative to the mean.
+    
+    What it analyzes:
+    Measures how tightly observations cluster around the center using standard deviation, IQR, and coefficient of variation.
+    
+    Example:
+    mean = 50  
+    std = 2  
+    IQR = 3  
+    CV = 0.04  
+    
+    Interpretation: Values are highly concentrated around the central range with very little variation.
+    '''
     s = series.dropna()
 
     q1 = s.quantile(0.25)
