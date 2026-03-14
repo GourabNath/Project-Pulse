@@ -4,7 +4,7 @@ from src.engines.variable_interpretation_engine_v2 import *
 from src.engines.deep_storytetter_univariate import deep_storyteller
 from src.engines.utils.animation import *
 
-def variable_interpretation_controller(df, variable_path, problem_context, threshold=80):
+def variable_interpretation_controller(df, variable_path, problem_context, threshold=85):
     base_interpretation, tool_plan, latency = variable_interpretation_engine(
         variable_path,
         problem_context
