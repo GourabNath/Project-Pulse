@@ -72,7 +72,7 @@ def interpret_variables_parallel_ai(variable_paths, problem_context, max_workers
 from src.engines.utils.typewriter import stream_markdown
 import time
 
-def run_variable_interpretation_controller(variable_list, problem_context):  
+def run_variable_interpretation_controller(variable_list, problem_context, run_path):  
   start = time.time()
   variable_paths = []
   for variable in variable_list:
