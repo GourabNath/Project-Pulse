@@ -5,6 +5,7 @@ def deep_storyteller(base_interpretation, tool_results, problem_context):
     import time
     import json
 
+    client = OpenAI()
     start_time = time.time()
 
     response = client.responses.create(
