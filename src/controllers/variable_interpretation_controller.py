@@ -4,7 +4,7 @@ from src.engines.variable_interpretation_engine_v2 import *
 from src.engines.deep_storytetter_univariate import deep_storyteller
 from src.engines.utils.animation import *
 
-def variable_interpretation_controller(variable_path, prob_context, threshold=80):
+def variable_interpretation_controller(variable_path, problem_context, threshold=80):
     base_interpretation, tool_plan, latency = variable_interpretation_engine(
         variable_path,
         prob_context
@@ -19,7 +19,7 @@ def variable_interpretation_controller(variable_path, prob_context, threshold=80
     if deep_gate == 1:
       series = df[variable]
       tool_results = run_selected_tools(series, tool_plan, threshold=threshold)
-      deep_story = deep_storyteller(base_interpretation, tool_results, prob_context)
+      deep_story = deep_storyteller(base_interpretation, tool_results, problem_context)
     else:
       deep_story = None
 
@@ -79,7 +79,7 @@ def run_variable_interpretation_controller(variable_list, problem_context, run_p
     variable_path = run_path + "/" + variable
     variable_paths.append(variable_path)
   
-  result = interpret_variables_parallel_ai(variable_paths, prob_context)
+  result = interpret_variables_parallel_ai(variable_paths, problem_context)
   stop = time.time()
   duration = stop - start
 
