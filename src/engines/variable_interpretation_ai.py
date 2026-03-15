@@ -47,7 +47,7 @@ def load_summary(variable_path):
 
 def get_plot_paths(variable_path):
     '''
-    construct the path to the plots.
+    Construct the path to the plots.
     PARAMETERS:
         variable_path: folder path that contains files (plots, summary) related to the variable
     '''
@@ -57,6 +57,12 @@ def get_plot_paths(variable_path):
 
 
 def variable_interpretation_engine(variable_path, problem_context):
+    '''
+    Generate variable interpretation for a numerical variable based on its summary, histogram, and boxplot.
+    PARAMETERS:
+        variable_path: folder path that contains files (plots, summary) related to the variable.
+        problen_context: a broader understanding of the problem under analysis (str).
+    '''
 
     # Load summary
     summary = load_summary(variable_path)
@@ -150,10 +156,18 @@ Frame the explanation around the entity described in the problem context rather 
 
 
 
+
 # Parallel processing
 from concurrent.futures import ThreadPoolExecutor
 
 def interpret_variables_parallel(variable_paths, problem_context, max_workers=5):
+    '''
+    Parallel processing framework to generate in insights in  parallel (to reduce latency)
+    PARAMETERS:
+        variable_paths: a list containing the paths to individual variable folders.
+        problen_context: a broader understanding of the problem under analysis (str).
+        max_worker: the maximum number of threads that can run tasks concurrently in the thread pool.
+    '''        
     results = {}
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         outputs = executor.map(
