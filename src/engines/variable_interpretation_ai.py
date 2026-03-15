@@ -12,22 +12,45 @@ from openai import OpenAI
 client = OpenAI()
 
 def load_problem_context(path):
+    '''
+    Load the problem context from the project metadata
+    PARAMETER:
+        path: the path to the JSON file that stores the project metadata
+    '''
     with open(path, "r") as f:
         context = json.load(f)
     return context.get("problem_description", "")
 
+
+
 def encode_image(path):
+    '''
+    Encode image to base64 (convert image to text encoding)
+    PARAMETER:
+        path: path to the image file
+    '''
     with open(path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 
+
 def load_summary(variable_path):
+    '''
+    Load the summary statistics of a variable
+    PARAMATER:
+        variable_path: folder path that contains files (plots, summary) related to the variable. 
+    '''
     summary_path = os.path.join(variable_path, "summary.json")
     with open(summary_path, "r") as f:
         return json.load(f)
 
 
 def get_plot_paths(variable_path):
+    '''
+    construct the path to the plots.
+    PARAMETERS:
+        variable_path: folder path that contains files (plots, summary) related to the variable
+    '''
     histogram_path = os.path.join(variable_path, "histogram.png")
     boxplot_path = os.path.join(variable_path, "boxplot.png")
     return histogram_path, boxplot_path
