@@ -58,6 +58,12 @@ def get_plot_paths(variable_path):
 
 
 def variable_interpretation_engine(variable_path, problem_context):
+    '''
+    Generate variable interpretation for a numerical variable based on its summary, histogram, and boxplot.
+    PARAMETERS:
+        variable_path: folder path that contains files (plots, summary) related to the variable.
+        problen_context: a broader understanding of the problem under analysis (str).
+    '''
 
     summary = load_summary(variable_path)
     histogram_path, boxplot_path = get_plot_paths(variable_path)
