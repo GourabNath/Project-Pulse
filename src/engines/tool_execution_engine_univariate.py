@@ -13,6 +13,12 @@ TOOLS = {
 
 # Tool Execution Engine
 def run_tool(tool_name, series):
+    '''
+    This function runs a specific statistical tool on a given numerical variable
+    PARAMNETERS
+        tool_name: a tool name from the tool registery
+        series: a variable (pandas series object)
+    '''
 
     if tool_name not in TOOLS:
         raise ValueError(f"Tool {tool_name} not recognized")
