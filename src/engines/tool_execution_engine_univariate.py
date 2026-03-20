@@ -32,6 +32,13 @@ def run_tool(tool_name, series):
 
 # Execute Multiple Tools Based on Confidence
 def run_selected_tools(series, tool_decisions, threshold=70):
+    '''
+    This function helps in executing a selected list of tools from the tool registry that surpases a certain threshold.
+    PARAMETERS
+        series: the variable of interest (pandas series object)
+        tool_decision: dictioinary that contains confidence threshold
+        threshold: default is 70%
+    '''
 
     results = {}
 
