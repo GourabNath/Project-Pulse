@@ -23,23 +23,23 @@ def univariate_eda_num(df_path, meta_data_path):
 
 
       #PLAYGROUND 1 - SUMMARY STATISTICS
-      stream_markdown("## Summary Statistics")
-      stream_markdown("\n" + "-"*80 + "\n")
+      stream_markdown("## Summary Statistics")                               # Heading
+      stream_markdown("\n" + "-"*80 + "\n")                                  # Seperating line
 
-      eda = meta_data_dict['eda1_univariate']['numeric']['summary'] 
-      stream_markdown("**Variable:** " + eda['variable'])
-      stream_markdown("**Variable Type:** " + eda['variable_type'])
-      stream_markdown(eda['methodology'])
-      stream_markdown("\n" + "-"*80 + "\n")
+      eda = meta_data_dict['eda1_univariate']['numeric']['summary']          # Reads the full suummary - a pre-written analysis
+      stream_markdown("**Variable:** " + eda['variable'])                    # Print the name of the variable
+      stream_markdown("**Variable Type:** " + eda['variable_type'])          # Print the variable type
+      stream_markdown(eda['methodology'])                                    # Print the methodology 
+      stream_markdown("\n" + "-"*80 + "\n")                                  # Separating line
 
-      stream_markdown("**Use code:** ")
-      stream_markdown(eda['code'])
+      stream_markdown("**Use code:** ")                                      # Sub-heading
+      stream_markdown(eda['code'])                                           # Print the code to reproduce the result
       print("\n")
 
-      print(df[eda['variable']].describe())
-      stream_markdown("\n" + "-"*80 + "\n")
-      print("Press ENTER to continue")
-      input()
+      print(df[eda['variable']].describe())                                  # Print the descriptive summary of the variable under study
+      stream_markdown("\n" + "-"*80 + "\n")                                  # Separating line
+      print("Press ENTER to continue")                                       # Just to pause for a while
+      input()                                                                # The next section continues after user presses any key
 
       #time.sleep(0.5)
       print("\n")
