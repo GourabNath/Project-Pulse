@@ -46,12 +46,12 @@ def univariate_eda_num(df_path, meta_data_path):
       stream_markdown("*Now let's discuss how we can interpret and report these results...*")
       print("\n")
       
-      for key in eda["statistics"].keys():
+      for key in eda["statistics"].keys():                                    # keys: count, min, 25%, 50%, 75% max, mean, std
         #time.sleep(0.5)
-        stream_markdown(eda["statistics"][key].replace("  ", "").replace("\t", ""))
-        stream_markdown("\n" + "-"*80 + "\n")
-      print("\n")
-      stream_markdown(eda['remark'])
+        stream_markdown(eda["statistics"][key].replace("  ", "").replace("\t", ""))   # Print statistica interpretation (one statistic at a time)
+        stream_markdown("\n" + "-"*80 + "\n")                                         # separating line
+      print("\n") 
+      stream_markdown(eda['remark'])                                                  # A final expert advice
       print("\n\n")
       print("Press ENTER to continue")
       input()
@@ -61,13 +61,13 @@ def univariate_eda_num(df_path, meta_data_path):
       stream_markdown("## Graphical analysis using Histogram")
       stream_markdown("\n" + "-"*80 + "\n")
 
-      hist = meta_data_dict['eda1_univariate']['numeric']['histogram']
-      stream_markdown(hist["intro"])
-      stream_markdown("\n" + "-"*80 + "\n")
-      stream_markdown("Use the **code** below to plot the **histogram**.")
-      stream_markdown(hist["code"])
-      stream_markdown("\n" + "-"*80 + "\n")
-      print("\n")
+      hist = meta_data_dict['eda1_univariate']['numeric']['histogram']                # Reads the entire histogram analysis from metadata
+      stream_markdown(hist["intro"])                                                  # Prints an intro about hostogram
+      stream_markdown("\n" + "-"*80 + "\n")                                           # separating line
+      stream_markdown("Use the **code** below to plot the **histogram**.")            # subheading
+      stream_markdown(hist["code"])                                                   # print code to reproduce result
+      stream_markdown("\n" + "-"*80 + "\n")                                           # separating line
+      print("\n")                                                                     
 
       time.sleep(1)
       #plt.figure(figsize=(6, 4))
@@ -81,7 +81,7 @@ def univariate_eda_num(df_path, meta_data_path):
 
       print("\n")
       stream_markdown("\n" + "-"*80 + "\n")
-      stream_markdown("**Observation:** " + hist["observation"])
+      stream_markdown("**Observation:** " + hist["observation"])     # interpretation of histogram
       stream_markdown("\n" + "-"*80 + "\n")
       print("\n\n")
       print("Press ENTER to continue")
