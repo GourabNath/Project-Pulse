@@ -1,5 +1,13 @@
 
 def univariate_eda_num(df_path, meta_data_path):
+      '''
+      Note: This introduction is static (and not generative). 
+      This function initiates a playground that walks an user to start learning EDA for numerical variable.
+
+      PARAMETERS
+            df_path: path to the dataframe
+            meta_data_path: path to the meta_data. The meta_data stores various calculated parameters of the variable and their interpretation.
+      '''
       import json
       import time
       import pandas as pd
@@ -18,7 +26,7 @@ def univariate_eda_num(df_path, meta_data_path):
       stream_markdown("## Summary Statistics")
       stream_markdown("\n" + "-"*80 + "\n")
 
-      eda = meta_data_dict['eda1_univariate']['numeric']['summary']
+      eda = meta_data_dict['eda1_univariate']['numeric']['summary'] 
       stream_markdown("**Variable:** " + eda['variable'])
       stream_markdown("**Variable Type:** " + eda['variable_type'])
       stream_markdown(eda['methodology'])
